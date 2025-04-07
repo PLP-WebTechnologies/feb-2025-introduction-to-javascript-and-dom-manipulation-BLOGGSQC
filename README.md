@@ -44,3 +44,31 @@
     </footer>
 </body>
 </html>
+
+script.js
+// Change text content dynamically
+document.getElementById('changeTextBtn').addEventListener('click', function() {
+    document.getElementById('text').textContent = 'The text has been changed!';
+});
+
+// Modify CSS styles via JavaScript
+document.getElementById('toggleStyleBtn').addEventListener('click', function() {
+    const textElement = document.getElementById('text');
+    textElement.classList.toggle('dynamic-style');
+});
+
+// Add or remove an element when a button is clicked
+document.getElementById('addElementBtn').addEventListener('click', function() {
+    const newElement = document.createElement('div');
+    newElement.className = 'added-element';
+    newElement.textContent = 'This is a dynamically added element.';
+    document.getElementById('elementContainer').appendChild(newElement);
+});
+
+document.getElementById('removeElementBtn').addEventListener('click', function() {
+    const container = document.getElementById('elementContainer');
+    if (container.lastChild) {
+        container.removeChild(container.lastChild);
+    }
+});
+
